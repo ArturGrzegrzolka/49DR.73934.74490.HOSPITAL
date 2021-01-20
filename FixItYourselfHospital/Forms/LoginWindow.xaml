@@ -5,10 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FixItYourselfHospital"
         mc:Ignorable="d"
-        Title="Login screen" Height="393.129" Width="536.803">
+        Title="Login screen" Height="514.939" Width="279" ResizeMode="NoResize">
     <Grid>
-        <TextBox x:Name="textBox_Login" CharacterCasing="Upper" MaxLength="4" HorizontalAlignment="Left" Height="33" Margin="65,102,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="157" FontSize="16" Tag="Login" TextAlignment="Center"/>
-        <PasswordBox x:Name="textBox_Password" PasswordChar="*" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" MaxLength="10" HorizontalAlignment="Left" Height="33" Margin="309,102,0,0" VerticalAlignment="Top" Width="157" FontSize="16" Tag="Password"/>
-        <Button x:Name="button_Login" IsDefault="True" Content="Login" HorizontalAlignment="Left" Margin="309,286,0,0" VerticalAlignment="Top" Width="157" Height="37" FontSize="16" Click="button_Login_Click"/>
+        <Image x:Name="image_LoginInterface" Source="/Resources/Images/FYI_Hospital_LoginInterface.png" Margin="-2,0,-4,0" Width="279"/>
+        <TextBox x:Name="textBox_Login" CharacterCasing="Upper" MaxLength="4" HorizontalAlignment="Left" Height="33" Margin="58,251,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="157" FontSize="16" Tag="Login" TextAlignment="Center"/>
+        <PasswordBox x:Name="textBox_Password" PasswordChar="*" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" MaxLength="10" HorizontalAlignment="Left" Height="33" Margin="58,318,0,0" VerticalAlignment="Top" Width="157" FontSize="16" Tag="Password"/>
+        
+        <Button x:Name="button_Login" IsDefault="True" Content="Login" HorizontalAlignment="Left" Margin="75,384,0,0" VerticalAlignment="Top" Width="125" Height="37" FontSize="16" Click="button_Login_Click"/>
     </Grid>
 </Window>

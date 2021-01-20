@@ -9,8 +9,6 @@ namespace FixItYourselfHospital.Models
     // Main model for maintaining all of the hospital's staff
     public class PersonnelModel
     {
-        public string UserLogin { get; set; }
-        public string UserPassword { get; set; }
         public int UserId { get; set; }
         public string UserName { get; set; }
         public string UserSecondName{ get; set; }
@@ -19,5 +17,12 @@ namespace FixItYourselfHospital.Models
         public string UserSpecialization { get; set; }
         public string UserPwd { get; set; }
         public string UserPesel { get; set; }
+
+        // for full and proper model these two props should be added in there
+        // but for security reasons we don't want to store users' login info
+        // it has no use in the application
+        //
+        // public string UserLogin { get; set; }
+        // public string UserPassword { get; set; }
     }
 }

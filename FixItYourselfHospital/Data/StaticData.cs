@@ -10,10 +10,13 @@ namespace FixItYourselfHospital.Data
     public static class StaticData
     {
         public static string connectionString { get; set; }
+        public static DataContext dataContext { get; set; }
         public static List<PersonnelModel> personnelModelList { get; set; }
 
         public static void LoadStaticData()
         {
+            connectionString = dataContext.connectionString;
+            personnelModelList = dataContext.GetPersonnel();
         }
 
         #region Utilities

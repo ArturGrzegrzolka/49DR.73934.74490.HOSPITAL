@@ -10,11 +10,16 @@ namespace FixItYourselfHospital
     /// </summary>
     public partial class LoginWindow : Window
     {
+        private DataContext dataContext; 
+
         public LoginWindow()
         {
             this.WindowStartupLocation = WindowStartupLocation.CenterScreen;
 
             InitializeComponent();
+
+            dataContext = new DataContext();
+            StaticData.dataContext = dataContext;
         }
 
         #region Events
@@ -32,7 +37,13 @@ namespace FixItYourselfHospital
                 if (string.IsNullOrEmpty(password.Trim()))
                     throw new ArgumentNullException();
 
-                //to do - open main hub
+                // check if user's credentials are in the database
+                if (!StaticData.dataContext.CheckLoginCredentials(login, password))
+                    throw new MissingMemberException();
+                else
+                {                   
+                    //to do - open main hub
+                }
             }
             catch (ArgumentNullException)
             {
