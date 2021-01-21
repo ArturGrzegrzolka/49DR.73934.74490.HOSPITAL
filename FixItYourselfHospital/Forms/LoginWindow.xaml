@@ -5,12 +5,21 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FixItYourselfHospital"
         mc:Ignorable="d"
-        Title="Login screen" Height="514.939" Width="279" ResizeMode="NoResize">
+        Title="Login screen" Height="514.939" Width="279" ResizeMode="NoResize" Background="#FFC0C000">
     <Grid>
         <Image x:Name="image_LoginInterface" Source="/Resources/Images/FYI_Hospital_LoginInterface.png" Margin="-2,0,-4,0" Width="279"/>
-        <TextBox x:Name="textBox_Login" CharacterCasing="Upper" MaxLength="4" HorizontalAlignment="Left" Height="33" Margin="58,251,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="157" FontSize="16" Tag="Login" TextAlignment="Center"/>
-        <PasswordBox x:Name="textBox_Password" PasswordChar="*" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" MaxLength="10" HorizontalAlignment="Left" Height="33" Margin="58,318,0,0" VerticalAlignment="Top" Width="157" FontSize="16" Tag="Password"/>
+
+        <Label Content="Login" HorizontalAlignment="Left" Margin="55,227,0,0" VerticalAlignment="Top" Foreground="#FF474747"/>
+        <TextBox x:Name="textBox_Login" CharacterCasing="Upper" MaxLength="4" HorizontalAlignment="Left" Height="33" Margin="58,251,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="157" FontSize="16" Tag="Login" TextAlignment="Center" Foreground="#FF474747"/>
+
+        <Label Content="Password" HorizontalAlignment="Left" Margin="55,292,0,0" VerticalAlignment="Top" Foreground="#FF474747"/>
+        <PasswordBox x:Name="textBox_Password" PasswordChar="*" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" MaxLength="10" HorizontalAlignment="Left" Height="33" Margin="58,318,0,0" VerticalAlignment="Top" Width="157" FontSize="16" Tag="Password" Foreground="#FF474747"/>
         
-        <Button x:Name="button_Login" IsDefault="True" Content="Login" HorizontalAlignment="Left" Margin="75,384,0,0" VerticalAlignment="Top" Width="125" Height="37" FontSize="16" Click="button_Login_Click"/>
+        <Button x:Name="button_Login" IsDefault="True" Content="Login" HorizontalAlignment="Left" Margin="75,384,0,0" VerticalAlignment="Top" Width="125" Height="37" FontSize="16" Click="button_Login_Click" Foreground="#FF474747"/>
+        <Label x:Name="label_ForgotPassword" Cursor="Hand" HorizontalAlignment="Left" Margin="73,423,0,0" VerticalAlignment="Top" Width="132" Foreground="#FFCD4715" 
+               MouseEnter="label_ForgotPassword_MouseEnter" 
+               MouseLeave="label_ForgotPassword_MouseLeave">
+            <TextBlock x:Name="textBlock_Label_ForgotPassword">Forgot your password?</TextBlock>
+        </Label>
     </Grid>
 </Window>

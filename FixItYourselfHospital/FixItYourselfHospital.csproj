@@ -74,8 +74,15 @@
       <DependentUpon>LoginWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Forms\MainHub.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Forms\MainHub.xaml.cs">
+      <DependentUpon>MainHub.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Models\PersonnelModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>

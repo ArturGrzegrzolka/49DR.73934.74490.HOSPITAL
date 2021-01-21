@@ -1,4 +1,5 @@
 ﻿using FixItYourselfHospital.Data;
+using FixItYourselfHospital.Forms;
 using System;
 using System.Windows;
 using System.Windows.Input;
@@ -24,6 +25,16 @@ namespace FixItYourselfHospital
 
         #region Events
 
+        private void label_ForgotPassword_MouseEnter(object sender, MouseEventArgs e)
+        {
+            textBlock_Label_ForgotPassword.TextDecorations = TextDecorations.Underline;
+        }
+
+        private void label_ForgotPassword_MouseLeave(object sender, MouseEventArgs e)
+        {
+            textBlock_Label_ForgotPassword.TextDecorations = null;
+        }
+
         private void button_Login_Click(object sender, RoutedEventArgs e)
         {
             try
@@ -41,8 +52,12 @@ namespace FixItYourselfHospital
                 if (!StaticData.dataContext.CheckLoginCredentials(login, password))
                     throw new MissingMemberException();
                 else
-                {                   
-                    //to do - open main hub
+                {
+                    // set currently logged user info for further actions
+                    StaticData.currentlyLoggedId = dataContext.CurrentlyLoggedInUserInfo(login, password);
+                    var mainHub = new MainHub();
+                    mainHub.Show();
+                    this.Close();
                 }
             }
             catch (ArgumentNullException)

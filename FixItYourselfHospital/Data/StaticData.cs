@@ -12,6 +12,7 @@ namespace FixItYourselfHospital.Data
         public static string connectionString { get; set; }
         public static DataContext dataContext { get; set; }
         public static List<PersonnelModel> personnelModelList { get; set; }
+        public static PersonnelModel currentlyLoggedId { get; set; }
 
         public static void LoadStaticData()
         {

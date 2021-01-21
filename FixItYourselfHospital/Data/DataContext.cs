@@ -43,6 +43,19 @@ namespace FixItYourselfHospital.Data
             return result;
         }
 
+        public PersonnelModel CurrentlyLoggedInUserInfo(string login, string password)
+        {
+            var param = new DynamicParameters();
+            param.Add("@p_UserLogin", login);
+            param.Add("@p_UserPassword", password);
+
+            Connection.Open();
+            var result = Connection.Query<PersonnelModel>("fiy_get_logged_person_info", param, commandType: CommandType.StoredProcedure).First();
+            Connection.Close();
+
+            return result;
+        }
+
         #endregion
     }
 }
