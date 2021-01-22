@@ -21,10 +21,34 @@ namespace FixItYourselfHospital.Data
 
         #region Stored Procedures
 
-        public List<PersonnelModel> GetPersonnel()
+        public List<PersonnelModel> GetPersonnelList()
         {
-            Connection.Open();
+            if (Connection.State == ConnectionState.Closed)
+                Connection.Open();
+
             var result = Connection.Query<PersonnelModel>("fiy_get_staff_information", commandType: CommandType.StoredProcedure).ToList();
+            Connection.Close();
+
+            return result;
+        }
+
+        public List<RoleModel> GetRoleList()
+        {
+            if (Connection.State == ConnectionState.Closed)
+                Connection.Open();
+
+            var result = Connection.Query<RoleModel>("fiy_get_roles", commandType: CommandType.StoredProcedure).ToList();
+            Connection.Close();
+
+            return result;
+        }
+
+        public List<SpecializationModel> GetSpecializationList()
+        {
+            if (Connection.State == ConnectionState.Closed)
+                Connection.Open();
+
+            var result = Connection.Query<SpecializationModel>("fiy_get_specialization", commandType: CommandType.StoredProcedure).ToList();
             Connection.Close();
 
             return result;
@@ -36,8 +60,39 @@ namespace FixItYourselfHospital.Data
             param.Add("@p_UserLogin", login);
             param.Add("@p_UserPassword", password);
 
-            Connection.Open();
+            if (Connection.State == ConnectionState.Closed)
+                Connection.Open();
+
             var result = Connection.QueryFirstOrDefault<bool>("fiy_check_credentials", param, commandType: CommandType.StoredProcedure);
+            Connection.Close();
+
+            return result;
+        }
+
+        public string GetRoleDescription(int roleId)
+        {
+            var param = new DynamicParameters();
+            param.Add("@p_UserRoleId", roleId);
+
+            
+            if(Connection.State == ConnectionState.Closed)
+                Connection.Open();
+
+            var result = Connection.QueryFirstOrDefault<string>("fiy_get_role_description", param, commandType: CommandType.StoredProcedure);
+            Connection.Close();
+
+            return result;
+        }
+
+        public string GetSpecializationDescription(int specId)
+        {
+            var param = new DynamicParameters();
+            param.Add("@p_UserSpecializationId", specId);
+
+            if (Connection.State == ConnectionState.Closed)
+                Connection.Open();
+
+            var result = Connection.QueryFirstOrDefault<string>("fiy_get_specialization_description", param, commandType: CommandType.StoredProcedure);
             Connection.Close();
 
             return result;
@@ -49,7 +104,9 @@ namespace FixItYourselfHospital.Data
             param.Add("@p_UserLogin", login);
             param.Add("@p_UserPassword", password);
 
-            Connection.Open();
+            if (Connection.State == ConnectionState.Closed)
+                Connection.Open();
+
             var result = Connection.Query<PersonnelModel>("fiy_get_logged_person_info", param, commandType: CommandType.StoredProcedure).First();
             Connection.Close();
 

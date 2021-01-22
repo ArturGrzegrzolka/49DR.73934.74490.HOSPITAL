@@ -42,6 +42,7 @@
     <Reference Include="System.Configuration" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -51,9 +52,11 @@
     <Reference Include="System.Xaml">
       <RequiredTargetFramework>4.0</RequiredTargetFramework>
     </Reference>
+    <Reference Include="UIAutomationProvider" />
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
+    <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
@@ -70,6 +73,7 @@
     </Compile>
     <Compile Include="Data\DataContext.cs" />
     <Compile Include="Data\StaticData.cs" />
+    <Compile Include="Extensions\EnumExt.cs" />
     <Compile Include="Forms\LoginWindow.xaml.cs">
       <DependentUpon>LoginWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -84,6 +88,8 @@
       <DependentUpon>MainHub.xaml</DependentUpon>
     </Compile>
     <Compile Include="Models\PersonnelModel.cs" />
+    <Compile Include="Models\RoleModel.cs" />
+    <Compile Include="Models\SpecializationModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>

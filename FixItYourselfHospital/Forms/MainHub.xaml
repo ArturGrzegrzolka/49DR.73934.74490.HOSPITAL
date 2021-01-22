@@ -5,23 +5,127 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FixItYourselfHospital.Forms"
         mc:Ignorable="d"
-        Title="Fix It Yourself Hospital" Height="722.857" Width="962.928" ResizeMode="NoResize">
+        Title="Fix It Yourself Hospital" Height="781.357" Width="658.428" ResizeMode="NoResize" Loaded="Window_Loaded">
     <Grid Background="LightGray" Margin="0,0,4,0">
-        <Image x:Name="image_Logo" Source="/Resources/Images/FYI_Hospital_Welcome.png" Margin="159,64,39,58" Opacity="0.4"></Image>
+        <Image x:Name="image_Logo" Source="/Resources/Images/FYI_Hospital_Welcome.png" Margin="56,190,56,58" Opacity="0.4"></Image>
 
-        <TabControl x:Name="tabControl_MainOptions" TabStripPlacement="Left" HorizontalAlignment="Right" Height="696" VerticalAlignment="Top" Width="136" Margin="0,-2,817,0" Background="#FFC0C000">
-            <!--<TabItem BorderBrush="#FFC0C000" Margin="-2,-2,304,286">
-                <TabItem.Header Width="426" Height="426">
-                    <Image Width="423" Height="434" Source="/Resources/Images/FIY_Hospital_Employees.png" Stretch="None" />
-                </TabItem.Header>
-                --><!--<TabItem.Background>
-                    <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
-                        <GradientStop Color="#FFC0C000" Offset="1"/>
-                    </LinearGradientBrush>
-                </TabItem.Background>--><!--
-            </TabItem>-->
-        </TabControl>
+        <DockPanel>
+            <Menu x:Name="menu_MainMenu" HorizontalAlignment="Left" Height="158" VerticalAlignment="Top" Width="648" DockPanel.Dock="Top" Background="#FFC0C000">
+                <MenuItem x:Name="menu_Employees" MenuItem.FlowDirection="LeftToRight">
+                    <MenuItem.Header>
+                        <Image Source="/Resources/Images/FIY_Hospital_Employees.png" Height="145" Width="145"/>
+                    </MenuItem.Header>
 
-        <Rectangle Fill="#FFC0C000" Panel.ZIndex="-1" HorizontalAlignment="Left" Height="694" Margin="2,0,0,0" Stroke="Black" VerticalAlignment="Top" Width="134" RenderTransformOrigin="0.51,0.455"/>
+                    <MenuItem x:Name="menu_Employees_Doctors"  Tag="Doctor">
+                        <MenuItem.Header>
+                            <Image Source="/Resources/Images/FIY_Hospital_Doctors.png" Height="120" Width="120"/>
+                        </MenuItem.Header>
+                    </MenuItem>
+                    <MenuItem x:Name="menu_Employees_Nurses"  Tag="Nurse">
+                        <MenuItem.Header>
+                            <Image Source="/Resources/Images/FIY_Hospital_Nurses.png" Height="120" Width="120"/>
+                        </MenuItem.Header>
+                    </MenuItem>
+                    <MenuItem x:Name="menu_Employees_Administrators"  Tag="Administrator">
+                        <MenuItem.Header>
+                            <Image Source="/Resources/Images/FIY_Hospital_Administrators.png" Height="120" Width="120"/>
+                        </MenuItem.Header>
+                    </MenuItem>
+                </MenuItem>
+
+                <MenuItem x:Name="menu_Specialization">
+                    <MenuItem.Header>
+                        <Image Source="/Resources/Images/FIY_Hospital_Specialization.png" Height="145" Width="145"></Image>
+                    </MenuItem.Header>
+
+                    <MenuItem x:Name="menu_Specialization_Cardiologist"  Tag="Cardiologist">
+                        <MenuItem.Header>
+                            <Image Source="/Resources/Images/FIY_Hospital_Cardiologist.png" Height="120" Width="120"/>
+                        </MenuItem.Header>
+                    </MenuItem>
+                    <MenuItem x:Name="menu_Specialization_Laryngologist"  Tag="Laryngologist">
+                        <MenuItem.Header>
+                            <Image Source="/Resources/Images/FIY_Hospital_Laryngologist.png" Height="120" Width="120"/>
+                        </MenuItem.Header>
+                    </MenuItem>
+                    <MenuItem x:Name="menu_Specialization_Neurologist"  Tag="Neurologist">
+                        <MenuItem.Header>
+                            <Image Source="/Resources/Images/FIY_Hospital_Neurologist.png" Height="120" Width="120"/>
+                        </MenuItem.Header>
+                    </MenuItem>
+                    <MenuItem x:Name="menu_Specialization_Urologist"  Tag="Urologist">
+                        <MenuItem.Header>
+                            <Image Source="/Resources/Images/FIY_Hospital_Urologist.png" Height="120" Width="120"/>
+                        </MenuItem.Header>
+                    </MenuItem>
+                </MenuItem>
+
+                <MenuItem x:Name="menu_Shifts">
+                    <MenuItem.Header>
+                        <Image Source="/Resources/Images/FIY_Hospital_Shifts.png" Height="145" Width="145"></Image>
+                    </MenuItem.Header>
+
+                    <MenuItem x:Name="menu_Shifts_Cardiologist" Tag="Cardiologist">
+                        <MenuItem.Header>
+                            <Image Source="/Resources/Images/FIY_Hospital_Cardiologist.png" Height="120" Width="120"/>
+                        </MenuItem.Header>
+                    </MenuItem>
+                    <MenuItem x:Name="menu_Shifts_Laryngologist" Tag="Laryngologist">
+                        <MenuItem.Header>
+                            <Image Source="/Resources/Images/FIY_Hospital_Laryngologist.png" Height="120" Width="120"/>
+                        </MenuItem.Header>
+                    </MenuItem>
+                    <MenuItem x:Name="menu_Shifts_Neurologist" Tag="Neurologist">
+                        <MenuItem.Header>
+                            <Image Source="/Resources/Images/FIY_Hospital_Neurologist.png" Height="120" Width="120"/>
+                        </MenuItem.Header>
+                    </MenuItem>
+                    <MenuItem x:Name="menu_Shifts_Urologist" Tag="Urologist">
+                        <MenuItem.Header>
+                            <Image Source="/Resources/Images/FIY_Hospital_Urologist.png" Height="120" Width="120"/>
+                        </MenuItem.Header>
+                    </MenuItem>
+                    <MenuItem x:Name="menu_Shifts_Nurses" Tag="Nurse">
+                        <MenuItem.Header>
+                            <Image Source="/Resources/Images/FIY_Hospital_Nurses.png" Height="120" Width="120"/>
+                        </MenuItem.Header>
+                    </MenuItem>
+                </MenuItem>
+
+                <MenuItem x:Name="menu_AdminPanel" Visibility="Collapsed">
+                    <MenuItem.Header>
+                        <Image Source="/Resources/Images/FIY_Hospital_AdminPanel.png" Height="145" Width="145"></Image>
+                    </MenuItem.Header>
+
+                    <MenuItem x:Name="menu_AdminPanel_EditEmployee">
+                        <MenuItem.Header>
+                            <Image Source="/Resources/Images/FIY_Hospital_EditEmployee.png" Height="120" Width="120"/>
+                        </MenuItem.Header>
+                    </MenuItem>
+                    <MenuItem x:Name="menu_AdminPanel_AddEmployee">
+                        <MenuItem.Header>
+                            <Image Source="/Resources/Images/FIY_Hospital_AddEmployee.png" Height="120" Width="120"/>
+                        </MenuItem.Header>
+                    </MenuItem>
+                    <MenuItem x:Name="menu_AdminPanel_DeleteEmployee">
+                        <MenuItem.Header>
+                            <Image Source="/Resources/Images/FIY_Hospital_DeleteEmployee.png" Height="120" Width="120"/>
+                        </MenuItem.Header>
+                    </MenuItem>
+                </MenuItem>
+            </Menu>
+        </DockPanel>
+
+        <DockPanel Margin="0,722,0,0">
+            <StatusBar DockPanel.Dock="Bottom" Height="28">
+                <StatusBarItem Background="#FFB9B9B9" Margin="0,-3,0,4">
+                    <TextBlock x:Name="textBlock_LoggedAs" Text="Logged as: "/>
+                </StatusBarItem>
+            </StatusBar>
+        </DockPanel>
+
+        <DockPanel Margin="0,158,0,30">
+            <Frame x:Name="frame_Parent"/>
+        </DockPanel>
     </Grid>
 </Window>

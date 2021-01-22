@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FixItYourselfHospital.Forms;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
@@ -13,5 +14,7 @@ namespace FixItYourselfHospital
     /// </summary>
     public partial class App : Application
     {
+        // MainHub ref for possibility of opening new windows in the same window (MainHub)
+        public static MainHub MainHubRef;
     }
 }

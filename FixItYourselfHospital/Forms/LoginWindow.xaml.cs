@@ -54,7 +54,7 @@ namespace FixItYourselfHospital
                 else
                 {
                     // set currently logged user info for further actions
-                    StaticData.currentlyLoggedId = dataContext.CurrentlyLoggedInUserInfo(login, password);
+                    StaticData.currentlyLoggedIn = dataContext.CurrentlyLoggedInUserInfo(login, password);
                     var mainHub = new MainHub();
                     mainHub.Show();
                     this.Close();
