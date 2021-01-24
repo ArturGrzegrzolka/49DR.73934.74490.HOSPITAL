@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\artur\Documents\WSM_repo\49DR.73934.74490.HOSPITAL\FixItYourselfHospital\App.xaml
-2900140663
+51120359094
 
-122126042845
+15-993912808
 19-2100678949
-Forms\LoginWindow.xaml;Forms\MainHub.xaml;
+Forms\EmployeesRoleListPage.xaml;Forms\EmployeesSpecListPage.xaml;Forms\LoginWindow.xaml;Forms\MainHub.xaml;Forms\PersonnelDetails.xaml;
 
 False
 

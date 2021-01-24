@@ -38,6 +38,22 @@ namespace FixItYourselfHospital.Forms
             textBlock_LoggedAs.Text += $"{loggedIn.UserName} {loggedIn.UserSecondName} ({loggedIn.UserRoleModel.RoleDescription})";
         }
 
+        private void OpenEmployeesList(object sender, RoutedEventArgs e)
+        {
+            var selection = sender as MenuItem;
+            
+            //get type of role/specialization to define type of displayed data on employeesListPage
+            var selectedRole = StaticData.roleModelList.FirstOrDefault(rm => rm.RoleDescription == (string)selection.Tag);
+            var selectedSpecialization = StaticData.specializationModelList.FirstOrDefault(rm => rm.SpecializationDescription == (string)selection.Tag);
+
+            App.MainHubRef = this;
+
+            if(selectedRole != null)
+                this.frame_Parent.Navigate(new EmployeesRoleListPage(selectedRole));
+            else
+                this.frame_Parent.Navigate(new EmployeesSpecListPage(selectedSpecialization));
+        }
+
         #endregion
     }
 }

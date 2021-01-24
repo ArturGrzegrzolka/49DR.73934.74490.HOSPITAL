@@ -16,17 +16,17 @@
                         <Image Source="/Resources/Images/FIY_Hospital_Employees.png" Height="145" Width="145"/>
                     </MenuItem.Header>
 
-                    <MenuItem x:Name="menu_Employees_Doctors"  Tag="Doctor">
+                    <MenuItem x:Name="menu_Employees_Doctors" Click="OpenEmployeesList" Tag="Doctor">
                         <MenuItem.Header>
                             <Image Source="/Resources/Images/FIY_Hospital_Doctors.png" Height="120" Width="120"/>
                         </MenuItem.Header>
                     </MenuItem>
-                    <MenuItem x:Name="menu_Employees_Nurses"  Tag="Nurse">
+                    <MenuItem x:Name="menu_Employees_Nurses" Click="OpenEmployeesList" Tag="Nurse">
                         <MenuItem.Header>
                             <Image Source="/Resources/Images/FIY_Hospital_Nurses.png" Height="120" Width="120"/>
                         </MenuItem.Header>
                     </MenuItem>
-                    <MenuItem x:Name="menu_Employees_Administrators"  Tag="Administrator">
+                    <MenuItem x:Name="menu_Employees_Administrators" Click="OpenEmployeesList" Tag="Administrator">
                         <MenuItem.Header>
                             <Image Source="/Resources/Images/FIY_Hospital_Administrators.png" Height="120" Width="120"/>
                         </MenuItem.Header>
@@ -38,22 +38,22 @@
                         <Image Source="/Resources/Images/FIY_Hospital_Specialization.png" Height="145" Width="145"></Image>
                     </MenuItem.Header>
 
-                    <MenuItem x:Name="menu_Specialization_Cardiologist"  Tag="Cardiologist">
+                    <MenuItem x:Name="menu_Specialization_Cardiologist" Click="OpenEmployeesList" Tag="Cardiologist">
                         <MenuItem.Header>
                             <Image Source="/Resources/Images/FIY_Hospital_Cardiologist.png" Height="120" Width="120"/>
                         </MenuItem.Header>
                     </MenuItem>
-                    <MenuItem x:Name="menu_Specialization_Laryngologist"  Tag="Laryngologist">
+                    <MenuItem x:Name="menu_Specialization_Laryngologist" Click="OpenEmployeesList" Tag="Laryngologist">
                         <MenuItem.Header>
                             <Image Source="/Resources/Images/FIY_Hospital_Laryngologist.png" Height="120" Width="120"/>
                         </MenuItem.Header>
                     </MenuItem>
-                    <MenuItem x:Name="menu_Specialization_Neurologist"  Tag="Neurologist">
+                    <MenuItem x:Name="menu_Specialization_Neurologist" Click="OpenEmployeesList" Tag="Neurologist">
                         <MenuItem.Header>
                             <Image Source="/Resources/Images/FIY_Hospital_Neurologist.png" Height="120" Width="120"/>
                         </MenuItem.Header>
                     </MenuItem>
-                    <MenuItem x:Name="menu_Specialization_Urologist"  Tag="Urologist">
+                    <MenuItem x:Name="menu_Specialization_Urologist" Click="OpenEmployeesList" Tag="Urologist">
                         <MenuItem.Header>
                             <Image Source="/Resources/Images/FIY_Hospital_Urologist.png" Height="120" Width="120"/>
                         </MenuItem.Header>

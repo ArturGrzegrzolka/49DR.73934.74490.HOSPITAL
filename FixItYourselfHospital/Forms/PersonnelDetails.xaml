@@ -1,0 +1,35 @@
+﻿<Window x:Class="FixItYourselfHospital.Forms.PersonnelDetails"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FixItYourselfHospital.Forms"
+        mc:Ignorable="d"
+        Title="Details" Height="450" Width="371" ResizeMode="NoResize">
+    <Grid Background="#FFCDCDCD">
+        <Image x:Name="image_Logo" Source="/Resources/Images/FYI_Hospital_Logo.png" Margin="75,258,75,10"></Image>
+
+        <!--masking rectangle - don't know how to handle white line on the right side of the image..-->
+        <Label Content="User Identity Number:" HorizontalAlignment="Left" Margin="28,23,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label_Id" Content="PlaceholderId" HorizontalAlignment="Left" Margin="160,23,0,0" VerticalAlignment="Top"/>
+        
+        <Label Content="Name:" HorizontalAlignment="Left" Margin="111,65,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label_Name" Content="PlaceholderName" HorizontalAlignment="Left" Margin="160,65,0,0" VerticalAlignment="Top"/>
+        
+        <Label Content="Second Name:" HorizontalAlignment="Left" Margin="68,96,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label_SecondName" Content="PlaceholderSecondName" HorizontalAlignment="Left" Margin="160,96,0,0" VerticalAlignment="Top"/>
+        
+        <Label Content="Email:" HorizontalAlignment="Left" Margin="111,220,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label_Email" Content="PlaceholderEmail" HorizontalAlignment="Left" Margin="160,220,0,0" VerticalAlignment="Top"/>
+        
+        <Label Content="Role:" HorizontalAlignment="Left" Margin="119,127,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label_Role" Content="PlaceholderRole" HorizontalAlignment="Left" Margin="160,127,0,0" VerticalAlignment="Top"/>
+        
+        <Label Content="Specialization:" HorizontalAlignment="Left" Margin="70,158,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label_Spec" Content="PlaceholderSpec" HorizontalAlignment="Left" Margin="160,158,0,0" VerticalAlignment="Top"/>
+        
+        <Label Content="PWD Number:" HorizontalAlignment="Left" Margin="68,189,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label_Pwd" Content="PlaceholderPWD" HorizontalAlignment="Left" Margin="160,189,0,0" VerticalAlignment="Top"/>
+        
+    </Grid>
+</Window>

@@ -63,6 +63,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="Forms\EmployeesRoleListPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Forms\EmployeesSpecListPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Forms\LoginWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -74,6 +82,12 @@
     <Compile Include="Data\DataContext.cs" />
     <Compile Include="Data\StaticData.cs" />
     <Compile Include="Extensions\EnumExt.cs" />
+    <Compile Include="Forms\EmployeesRoleListPage.xaml.cs">
+      <DependentUpon>EmployeesRoleListPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\EmployeesSpecListPage.xaml.cs">
+      <DependentUpon>EmployeesSpecListPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Forms\LoginWindow.xaml.cs">
       <DependentUpon>LoginWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -82,10 +96,17 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Forms\PersonnelDetails.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Forms\MainHub.xaml.cs">
       <DependentUpon>MainHub.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PersonnelDetails.xaml.cs">
+      <DependentUpon>PersonnelDetails.xaml</DependentUpon>
     </Compile>
     <Compile Include="Models\PersonnelModel.cs" />
     <Compile Include="Models\RoleModel.cs" />

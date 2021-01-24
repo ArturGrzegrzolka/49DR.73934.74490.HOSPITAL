@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\dudys\Desktop\FIYHospitalCommits\FixItYourselfHospital\FixItYourselfHospital\obj\Debug\
+E:\Projekty\FixItYourselfHospital\FixItYourselfHospital\obj\Debug\
 FixItYourselfHospital
 none
 false
 DEBUG;TRACE
-C:\Users\dudys\Desktop\FIYHospitalCommits\FixItYourselfHospital\FixItYourselfHospital\App.xaml
-2900140663
+E:\Projekty\FixItYourselfHospital\FixItYourselfHospital\App.xaml
+51120359094
 
-131283683478
-19-745910945
-Forms\LoginWindow.xaml;Forms\MainHub.xaml;
+16-1836272175
+19-1545481279
+Forms\EmployeesRoleListPage.xaml;Forms\EmployeesSpecListPage.xaml;Forms\LoginWindow.xaml;Forms\MainHub.xaml;Forms\PersonnelDetails.xaml;
 
-False
+True
 
