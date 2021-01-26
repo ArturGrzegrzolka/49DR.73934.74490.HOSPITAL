@@ -16,6 +16,8 @@ namespace FixItYourselfHospital.Data
         public static List<RoleModel> roleModelList { get; set; }
         public static List<SpecializationModel> specializationModelList { get; set; }
         public static PersonnelModel currentlyLoggedIn { get; set; }
+        public static string NewEmployeeUsername { get; set; }
+        public static string NewEmployeePassword { get; set; }
 
         public static void LoadStaticData()
         {

@@ -1,9 +1,11 @@
 ﻿using Dapper;
 using FixItYourselfHospital.Models;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Windows;
 
 namespace FixItYourselfHospital.Data
 {
@@ -18,6 +20,29 @@ namespace FixItYourselfHospital.Data
             connectionString = StaticData.ReadSetting("connectionString");
             Connection = new SqlConnection(connectionString);
         }
+
+        #region Utilities
+
+        public bool CheckInternetConnection()
+        {
+            try
+            {
+                if (Connection.State == ConnectionState.Closed)
+                    Connection.Open();
+
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+            finally
+            {
+                Connection.Close();
+            }
+        }
+
+        #endregion
 
         #region Stored Procedures
 
@@ -69,13 +94,41 @@ namespace FixItYourselfHospital.Data
             return result;
         }
 
+        public bool CheckIfShiftExists(int month)
+        {
+            var param = new DynamicParameters();
+            param.Add("@p_Month", month);
+
+            if (Connection.State == ConnectionState.Closed)
+                Connection.Open();
+
+            var result = Connection.QueryFirstOrDefault<bool>("fiy_check_month", param, commandType: CommandType.StoredProcedure);
+            Connection.Close();
+
+            return result;
+        }
+
+        public ShiftModel GetShiftsWithDate(DateTime date)
+        {
+            var param = new DynamicParameters();
+            param.Add("@p_Date", date);
+
+            if (Connection.State == ConnectionState.Closed)
+                Connection.Open();
+
+            var result = Connection.QueryFirstOrDefault<ShiftModel>("fiy_get_shifts_for_date", param, commandType: CommandType.StoredProcedure);
+            Connection.Close();
+
+            return result;
+        }
+
         public string GetRoleDescription(int roleId)
         {
             var param = new DynamicParameters();
             param.Add("@p_UserRoleId", roleId);
 
-            
-            if(Connection.State == ConnectionState.Closed)
+
+            if (Connection.State == ConnectionState.Closed)
                 Connection.Open();
 
             var result = Connection.QueryFirstOrDefault<string>("fiy_get_role_description", param, commandType: CommandType.StoredProcedure);
@@ -111,6 +164,19 @@ namespace FixItYourselfHospital.Data
             Connection.Close();
 
             return result;
+        }
+
+        public void GenerateShifts(DataTable shifts)
+        {
+            var param = new DynamicParameters();
+            var dp = new DynamicParameters(new { p_DataTable = shifts });
+            param.AddDynamicParams(dp);
+
+            if (Connection.State == ConnectionState.Closed)
+                Connection.Open();
+
+            var result = Connection.Execute("fiy_insert_shift_for_month", param, commandType: CommandType.StoredProcedure);
+            Connection.Close();
         }
 
         #endregion

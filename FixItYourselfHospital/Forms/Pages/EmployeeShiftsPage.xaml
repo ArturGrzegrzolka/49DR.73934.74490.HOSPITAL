@@ -1,0 +1,61 @@
+﻿<Page x:Class="FixItYourselfHospital.Forms.EmployeeShiftsPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:FixItYourselfHospital.Forms"
+      mc:Ignorable="d" 
+      d:DesignHeight="564" d:DesignWidth="648"
+      Title="EmployeeShiftsPage">
+
+    <Grid>
+        <StackPanel Margin="20,35,434,0" Height="267" VerticalAlignment="Top">
+            <Calendar x:Name="calendar_Shifts" DisplayDateStart=""/>
+            <Label Height="33" VerticalAlignment="Top" Margin="10,0,-10,0">Selected date:</Label>
+            <TextBox x:Name="textBox_selectedData" IsReadOnly="True" Width="170" Height="26" Text="{Binding SelectedDate, ElementName=calendar_Shifts, StringFormat=d, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top"/>
+            <Button x:Name="button_Find" Content="Find" Height="20" Width="60" Margin="10" VerticalAlignment="Top" Click="button_Find_Click"/>
+        </StackPanel>
+
+        <Rectangle Fill="#FFCDCDCD" HorizontalAlignment="Left" Height="564" VerticalAlignment="Top" Width="648" Panel.ZIndex="-1"/>
+        <ListView x:Name="listView_Employees" AlternationCount="1000" Margin="219,10,10,22">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Name" Width="70" DisplayMemberBinding="{Binding UserName}" />
+                    <GridViewColumn Header="Second Name" Width="80" DisplayMemberBinding="{Binding UserSecondName}" />
+                    <GridViewColumn Header="Role" Width="80" DisplayMemberBinding="{Binding UserRoleModel.RoleDescription}" />
+                    <GridViewColumn Header="Specialization" Width="120" DisplayMemberBinding="{Binding UserSpecializationModel.SpecializationDescription}" />
+                    <GridViewColumn Header="Details" Width="48">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button x:Name="button_Details" Width="30" Height="30" Content="?" Click="button_Details_Click" Tag="{Binding (ItemsControl.AlternationIndex), RelativeSource={RelativeSource AncestorType=ListViewItem}}">
+                                    <Button.Template>
+                                        <ControlTemplate TargetType="Button">
+                                            <Grid>
+                                                <Ellipse>
+                                                    <Ellipse.Fill>
+                                                        <RadialGradientBrush>
+                                                            <GradientStop Offset="0" Color="#FFC0C000" />
+                                                            <RadialGradientBrush.Transform>
+                                                                <TransformGroup>
+                                                                    <ScaleTransform ScaleY="0.65" />
+                                                                </TransformGroup>
+                                                            </RadialGradientBrush.Transform>
+                                                        </RadialGradientBrush>
+                                                    </Ellipse.Fill>
+                                                </Ellipse>
+                                                <ContentPresenter HorizontalAlignment="Center"
+                                                    VerticalAlignment="Center"/>
+                                            </Grid>
+                                        </ControlTemplate>
+                                    </Button.Template>
+                                </Button>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+        <Image x:Name="image_Logo" Source="/Resources/Images/FYI_Hospital_Logo.png" Margin="-145,383,278,0" Panel.ZIndex="-1" Height="181" VerticalAlignment="Top"/>
+    </Grid>
+</Page>
