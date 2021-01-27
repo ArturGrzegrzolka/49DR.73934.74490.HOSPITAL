@@ -3,24 +3,21 @@ using FixItYourselfHospital.Models;
 using System.Windows.Controls;
 using System.Linq;
 using System.Windows;
-using System.Windows.Data;
 using System;
+using System.Windows.Data;
 
 namespace FixItYourselfHospital.Forms
 {
     /// <summary>
-    /// Interaction logic for EmployeesListPage.xaml
+    /// Interaction logic for EmployeesDeleteListPage.xaml
     /// </summary>
-    public partial class EmployeesRoleListPage : Page
+    public partial class EmployeesDeleteListPage : Page
     {
-        private RoleModel _selectedRole { get; set; }
-        public EmployeesRoleListPage(RoleModel selectedRole = null)
+        public EmployeesDeleteListPage()
         {
-            _selectedRole = selectedRole;
-
             InitializeComponent();
             FillInEmployeesList();
-
+            
             CollectionView view = (CollectionView)CollectionViewSource.GetDefaultView(listView_Employees.ItemsSource);
             view.Filter = UserFilter;
         }
@@ -33,16 +30,20 @@ namespace FixItYourselfHospital.Forms
             // and without making a selection we couldn't get index to connect row with personnel model
             var buttonOfInterest = sender as Button;
             var indexOfInterest = (int)buttonOfInterest.Tag;
-            var personnelModelOfInterest = listView_Employees.Items[indexOfInterest];
+            var personnelModelOfInterest = (PersonnelModel)listView_Employees.Items[indexOfInterest];
 
-            if(_selectedRole != null)
+            // I know that I didn't even add currently logged in person to list of employees, but users manage to achieve every bug, soooo...
+            if(personnelModelOfInterest != StaticData.currentlyLoggedIn)
             {
-                var details = new PersonnelDetails((PersonnelModel)personnelModelOfInterest);
-                details.ShowDialog();
-            }
-            else
-            {
-                this.NavigationService.Navigate((new EmployeeEditPage((PersonnelModel)personnelModelOfInterest)));
+                if (MessageBox.Show($"Do you really want to delete {personnelModelOfInterest.UserName} {personnelModelOfInterest.UserSecondName}?",
+                    "Question", MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.Yes)
+                {
+                    StaticData.dataContext.DeleteEmployee(personnelModelOfInterest.UserId);
+
+                    // refresh the list after deletion
+                    StaticData.personnelModelList.Remove(personnelModelOfInterest);
+                    FillInEmployeesList();
+                }
             }
         }
 
@@ -56,16 +57,7 @@ namespace FixItYourselfHospital.Forms
         // fill in employees list according to selected role in MainHub
         private void FillInEmployeesList()
         {
-            // by input role define if we need to display lit of specific roles or full list of employees
-            if(_selectedRole != null)
-            {
-                listView_Employees.ItemsSource = StaticData.personnelModelList
-                    .Where(p => p.UserRole == _selectedRole.RoleId);
-            }
-            else
-            {
-                listView_Employees.ItemsSource = StaticData.personnelModelList;
-            }
+            listView_Employees.ItemsSource = StaticData.personnelModelList.Where(p => p != StaticData.currentlyLoggedIn);
         }
 
         private bool UserFilter(object item)

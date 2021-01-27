@@ -63,6 +63,18 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="Forms\Pages\EmployeeEditPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Forms\Pages\EmployeeAddPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Forms\Pages\EmployeesDeleteListPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Forms\Pages\EmployeeShiftsPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -87,6 +99,15 @@
     <Compile Include="Data\StaticData.cs" />
     <Compile Include="Extensions\EnumExt.cs" />
     <Compile Include="Extensions\ValidationExt.cs" />
+    <Compile Include="Forms\Pages\EmployeeEditPage.xaml.cs">
+      <DependentUpon>EmployeeEditPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Pages\EmployeeAddPage.xaml.cs">
+      <DependentUpon>EmployeeAddPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Pages\EmployeesDeleteListPage.xaml.cs">
+      <DependentUpon>EmployeesDeleteListPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Pages\EmployeeShiftsPage.xaml.cs">
       <DependentUpon>EmployeeShiftsPage.xaml</DependentUpon>
     </Compile>

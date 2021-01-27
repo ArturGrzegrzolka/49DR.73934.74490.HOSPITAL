@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\Marcin\Downloads\7\FixItYourselfHospital\FixItYourselfHospital\obj\Release\
+C:\Users\artur\Downloads\FIYHospitalCommits\FixItYourselfHospital\FixItYourselfHospital\obj\Release\
 FixItYourselfHospital
 none
 false
 TRACE
-C:\Users\Marcin\Downloads\7\FixItYourselfHospital\FixItYourselfHospital\App.xaml
-6987493534
+C:\Users\artur\Downloads\FIYHospitalCommits\FixItYourselfHospital\FixItYourselfHospital\App.xaml
+91486918449
 
-18-1804400754
-19-1194383246
-Forms\Pages\EmployeeShiftsPage.xaml;Forms\Pages\EmployeesRoleListPage.xaml;Forms\Pages\EmployeesSpecListPage.xaml;Forms\Windows\LoginWindow.xaml;Forms\Windows\MainHub.xaml;Forms\Windows\PersonnelDetails.xaml;
+211323481738
+19-1012750529
+Forms\Pages\EmployeeEditPage.xaml;Forms\Pages\EmployeeAddPage.xaml;Forms\Pages\EmployeesDeleteListPage.xaml;Forms\Pages\EmployeeShiftsPage.xaml;Forms\Pages\EmployeesRoleListPage.xaml;Forms\Pages\EmployeesSpecListPage.xaml;Forms\Windows\LoginWindow.xaml;Forms\Windows\MainHub.xaml;Forms\Windows\PersonnelDetails.xaml;
 
 False
 

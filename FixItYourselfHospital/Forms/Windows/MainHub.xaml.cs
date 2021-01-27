@@ -55,6 +55,21 @@ namespace FixItYourselfHospital.Forms
                 this.frame_Parent.Navigate(new EmployeesSpecListPage(selectedSpecialization));
         }
 
+        private void menu_AdminPanel_AddEmployee_Click(object sender, RoutedEventArgs e)
+        {
+            this.frame_Parent.Navigate(new EmployeeAddPage());
+        }
+
+        private void menu_AdminPanel_DeleteEmployee_Click(object sender, RoutedEventArgs e)
+        {
+            this.frame_Parent.Navigate(new EmployeesDeleteListPage());
+        }
+
+        private void menu_AdminPanel_EditEmployee_Click(object sender, RoutedEventArgs e)
+        {
+            this.frame_Parent.Navigate(new EmployeesRoleListPage());
+        }
+
         private void menu_Shifts_Click(object sender, RoutedEventArgs e)
         {
             this.frame_Parent.Navigate(new EmployeeShiftsPage());

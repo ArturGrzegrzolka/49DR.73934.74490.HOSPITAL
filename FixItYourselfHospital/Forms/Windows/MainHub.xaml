@@ -97,17 +97,17 @@
                         <Image Source="/Resources/Images/FIY_Hospital_AdminPanel.png" Height="145" Width="145"></Image>
                     </MenuItem.Header>
 
-                    <MenuItem x:Name="menu_AdminPanel_EditEmployee">
+                    <MenuItem x:Name="menu_AdminPanel_EditEmployee" Click="menu_AdminPanel_EditEmployee_Click">
                         <MenuItem.Header>
                             <Image Source="/Resources/Images/FIY_Hospital_EditEmployee.png" Height="120" Width="120"/>
                         </MenuItem.Header>
                     </MenuItem>
-                    <MenuItem x:Name="menu_AdminPanel_AddEmployee">
+                    <MenuItem x:Name="menu_AdminPanel_AddEmployee" Click="menu_AdminPanel_AddEmployee_Click">
                         <MenuItem.Header>
                             <Image Source="/Resources/Images/FIY_Hospital_AddEmployee.png" Height="120" Width="120"/>
                         </MenuItem.Header>
                     </MenuItem>
-                    <MenuItem x:Name="menu_AdminPanel_DeleteEmployee">
+                    <MenuItem x:Name="menu_AdminPanel_DeleteEmployee" Click="menu_AdminPanel_DeleteEmployee_Click">
                         <MenuItem.Header>
                             <Image Source="/Resources/Images/FIY_Hospital_DeleteEmployee.png" Height="120" Width="120"/>
                         </MenuItem.Header>

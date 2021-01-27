@@ -166,6 +166,60 @@ namespace FixItYourselfHospital.Data
             return result;
         }
 
+        public void CreateNewEmployee(PersonnelModel employee)
+        {
+            var param = new DynamicParameters();
+            param.Add("@p_UserId", employee.UserId);
+            param.Add("@p_UserLogin", employee.UserLogin);
+            param.Add("@p_UserPassword", employee.UserPassword);
+            param.Add("@p_UserName", employee.UserName);
+            param.Add("@p_UserSecondName", employee.UserSecondName);
+            param.Add("@p_UserEmail", employee.UserEmail);
+            param.Add("@p_UserRole", employee.UserRole);
+            param.Add("@p_UserSpec", employee.UserSpecialization);
+            param.Add("@p_UserPwz", employee.UserPwz);
+            param.Add("@p_UserPesel", employee.UserPesel);
+
+            if (Connection.State == ConnectionState.Closed)
+                Connection.Open();
+
+            Connection.Execute("fiy_add_new_employee", param, commandType: CommandType.StoredProcedure);
+            Connection.Close();
+        }
+
+        public void UpdateEmployee(PersonnelModel employee)
+        {
+            var param = new DynamicParameters();
+            param.Add("@p_UserId", employee.UserId);
+            param.Add("@p_UserLogin", employee.UserLogin);
+            param.Add("@p_UserPassword", employee.UserPassword);
+            param.Add("@p_UserName", employee.UserName);
+            param.Add("@p_UserSecondName", employee.UserSecondName);
+            param.Add("@p_UserEmail", employee.UserEmail);
+            param.Add("@p_UserRole", employee.UserRole);
+            param.Add("@p_UserSpec", employee.UserSpecialization);
+            param.Add("@p_UserPwz", employee.UserPwz);
+            param.Add("@p_UserPesel", employee.UserPesel);
+
+            if (Connection.State == ConnectionState.Closed)
+                Connection.Open();
+
+            Connection.Execute("fiy_update_employee", param, commandType: CommandType.StoredProcedure);
+            Connection.Close();
+        }
+
+        public void DeleteEmployee(int userId)
+        {
+            var param = new DynamicParameters();
+            param.Add("@p_UserId", userId);
+
+            if (Connection.State == ConnectionState.Closed)
+                Connection.Open();
+
+            Connection.Execute("fiy_delete_person", param, commandType: CommandType.StoredProcedure);
+            Connection.Close();
+        }
+
         public void GenerateShifts(DataTable shifts)
         {
             var param = new DynamicParameters();
