@@ -96,6 +96,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Data\DataContext.cs" />
+    <Compile Include="Data\ShiftRecalculation.cs" />
     <Compile Include="Data\StaticData.cs" />
     <Compile Include="Extensions\EnumExt.cs" />
     <Compile Include="Extensions\ValidationExt.cs" />

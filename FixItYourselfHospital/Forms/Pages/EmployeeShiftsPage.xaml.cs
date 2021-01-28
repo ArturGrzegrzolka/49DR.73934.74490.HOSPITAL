@@ -61,7 +61,18 @@ namespace FixItYourselfHospital.Forms
                     if (MessageBox.Show($"No shifts scheduled for current month. Do you want to generate schedule?",
                         "Question", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
                     {
-                        // to do - recalculate shifts
+                        var shift = new ShiftRecalculation(selectedDateTime);
+                        shift.ScheduleShifts();
+
+                        personnelShift = _dataContext.GetShiftsWithDate(selectedDateTime);
+                        // list is going to be relatively short, so let's use LINQ instead of AddRange to merge two lists
+                        listView_Employees.ItemsSource = (personnelShift.DoctorIdsList
+                        .Concat(personnelShift.NurseIdsList)
+                        .ToList()
+                        .Select(personnel => StaticData.personnelModelList
+                        .First(p => p.UserId
+                        .Equals(personnel))))
+                        .ToList();
                     }
                 }
                 else

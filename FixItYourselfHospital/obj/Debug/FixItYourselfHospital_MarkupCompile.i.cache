@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 E:\Projekty\FixItYourselfHospital\FixItYourselfHospital\App.xaml
-51120359094
+91486918449
 
-16-1836272175
+23415850429
 19-1545481279
-Forms\EmployeesRoleListPage.xaml;Forms\EmployeesSpecListPage.xaml;Forms\LoginWindow.xaml;Forms\MainHub.xaml;Forms\PersonnelDetails.xaml;
+Forms\Pages\EmployeeEditPage.xaml;Forms\Pages\EmployeeAddPage.xaml;Forms\Pages\EmployeesDeleteListPage.xaml;Forms\Pages\EmployeeShiftsPage.xaml;Forms\Pages\EmployeesRoleListPage.xaml;Forms\Pages\EmployeesSpecListPage.xaml;Forms\Windows\LoginWindow.xaml;Forms\Windows\MainHub.xaml;Forms\Windows\PersonnelDetails.xaml;
 
-True
+False
 

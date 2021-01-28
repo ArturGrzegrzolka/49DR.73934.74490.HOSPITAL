@@ -1,9 +1,12 @@
 ﻿
-FC:\Users\Marcin\Documents\GitHub\49DR.73934.74490.HOSPITAL\FixItYourselfHospital\App.xaml;;
-FC:\Users\Marcin\Documents\GitHub\49DR.73934.74490.HOSPITAL\FixItYourselfHospital\Forms\Pages\EmployeeShiftsPage.xaml;;
-FC:\Users\Marcin\Documents\GitHub\49DR.73934.74490.HOSPITAL\FixItYourselfHospital\Forms\Pages\EmployeesRoleListPage.xaml;;
-FC:\Users\Marcin\Documents\GitHub\49DR.73934.74490.HOSPITAL\FixItYourselfHospital\Forms\Pages\EmployeesSpecListPage.xaml;;
-FC:\Users\Marcin\Documents\GitHub\49DR.73934.74490.HOSPITAL\FixItYourselfHospital\Forms\Windows\LoginWindow.xaml;;
-FC:\Users\Marcin\Documents\GitHub\49DR.73934.74490.HOSPITAL\FixItYourselfHospital\Forms\Windows\MainHub.xaml;;
-FC:\Users\Marcin\Documents\GitHub\49DR.73934.74490.HOSPITAL\FixItYourselfHospital\Forms\Windows\PersonnelDetails.xaml;;
+FE:\Projekty\FixItYourselfHospital\FixItYourselfHospital\App.xaml;;
+FE:\Projekty\FixItYourselfHospital\FixItYourselfHospital\Forms\Pages\EmployeeEditPage.xaml;;
+FE:\Projekty\FixItYourselfHospital\FixItYourselfHospital\Forms\Pages\EmployeeAddPage.xaml;;
+FE:\Projekty\FixItYourselfHospital\FixItYourselfHospital\Forms\Pages\EmployeesDeleteListPage.xaml;;
+FE:\Projekty\FixItYourselfHospital\FixItYourselfHospital\Forms\Pages\EmployeeShiftsPage.xaml;;
+FE:\Projekty\FixItYourselfHospital\FixItYourselfHospital\Forms\Pages\EmployeesRoleListPage.xaml;;
+FE:\Projekty\FixItYourselfHospital\FixItYourselfHospital\Forms\Pages\EmployeesSpecListPage.xaml;;
+FE:\Projekty\FixItYourselfHospital\FixItYourselfHospital\Forms\Windows\LoginWindow.xaml;;
+FE:\Projekty\FixItYourselfHospital\FixItYourselfHospital\Forms\Windows\MainHub.xaml;;
+FE:\Projekty\FixItYourselfHospital\FixItYourselfHospital\Forms\Windows\PersonnelDetails.xaml;;
 
